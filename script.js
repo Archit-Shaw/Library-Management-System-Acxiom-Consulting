@@ -846,8 +846,6 @@ function issueBook() {
 
   localStorage.setItem("issuedBooks", JSON.stringify(issuedBooks));
 
-  console.log("✅ Saved:", issuedBooks);
-
   alert("Book Issued Successfully");
 }
 
