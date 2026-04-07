@@ -1,0 +1,279 @@
+body {
+  font-family: Arial;
+  background-color: #f2f2f2;
+}
+
+.login-container {
+  width: 500px;
+  margin: 100px auto;
+  padding: 30px;
+  border: 2px solid #333;
+  background-color: #e6e6e6;
+  text-align: center;
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+
+table {
+  margin: auto;
+}
+
+td {
+  padding: 10px;
+}
+
+input {
+  width: 250px;
+  padding: 8px;
+  border: 2px solid black;
+}
+
+.btn-group {
+  margin-top: 20px;
+}
+
+button {
+  padding: 10px 30px;
+  margin: 10px;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+}
+
+.login-btn {
+  background: linear-gradient(to right, #4a90e2, #357abd);
+}
+
+.cancel-btn {
+  background: linear-gradient(to right, #6aa6d6, #4a90e2);
+}
+
+.error {
+  color: red;
+}
+/* dashboard */
+
+body {
+  font-family: Arial;
+  background-color: #f2f2f2;
+}
+
+.container {
+  width: 700px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 2px solid black;
+  background-color: #e6e6e6;
+}
+
+h2 {
+  text-align: center;
+}
+
+.nav-links {
+  margin: 20px 0;
+}
+
+.nav-links a {
+  margin-right: 30px;
+  color: blue;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.product-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.product-table th,
+.product-table td {
+  padding: 10px;
+  text-align: left;
+}
+
+.logout {
+  text-align: right;
+  margin-top: 20px;
+}
+
+.logout a {
+  color: blue;
+  text-decoration: underline;
+}
+
+/* transactions  */
+
+.top-nav {
+  text-align: right;
+  margin-bottom: 10px;
+}
+
+.transaction-table {
+  width: 100%;
+}
+
+.transaction-table td {
+  padding: 10px;
+}
+
+.transaction-table a {
+  color: blue;
+  text-decoration: underline;
+  font-size: 16px;
+}
+
+/* transactions pages  */
+
+body {
+  font-family: Arial;
+  background-color: #f2f2f2;
+}
+
+.container {
+  width: 700px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 2px solid black;
+  background-color: #e6e6e6;
+}
+
+h2 {
+  text-align: center;
+}
+
+h3 {
+  border: 2px solid black;
+  padding: 5px;
+  background-color: #d9d9d9;
+}
+
+table {
+  width: 100%;
+  margin-top: 10px;
+}
+
+td {
+  padding: 10px;
+}
+
+input, select, textarea {
+  width: 95%;
+  padding: 6px;
+}
+
+button {
+  padding: 10px 30px;
+  margin: 10px;
+  border-radius: 20px;
+  border: none;
+  color: white;
+  background: linear-gradient(to right, #4a90e2, #357abd);
+  cursor: pointer;
+}
+
+.error {
+  color: red;
+}
+
+.top-nav {
+  text-align: right;
+}
+
+.logout {
+  text-align: right;
+}
+
+/* reports */
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+}
+
+/* Main Container */
+.container {
+  width: 900px;
+  margin: 30px auto;
+  padding: 20px;
+  border: 2px solid black;
+  background-color: #e6e6e6;
+}
+
+/* Heading */
+h2 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+/* Sub Heading Box */
+h3 {
+  border: 2px solid black;
+  padding: 6px;
+  background-color: #d9d9d9;
+  margin-bottom: 15px;
+}
+
+/* Table Styling */
+table {
+  width: 100%;
+  border-collapse: collapse;   /* IMPORTANT FIX */
+  margin-top: 10px;
+  background-color: white;
+}
+
+/* Table Borders */
+table, th, td {
+  border: 1px solid black;
+}
+
+/* Table Headers */
+th {
+  background-color: #d9d9d9;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* Table Cells */
+td {
+  text-align: center;
+}
+
+/* Padding */
+td, th {
+  padding: 10px;
+}
+
+/* No Data Row */
+.no-data {
+  text-align: left;
+  padding-left: 10px;
+  font-weight: normal;
+}
+
+/* Links */
+a {
+  color: blue;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* Buttons */
+button {
+  padding: 10px 25px;
+  margin-top: 15px;
+  border-radius: 20px;
+  background: linear-gradient(to right, #4a90e2, #357abd);
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+/* Logout Alignment */
+.logout {
+  text-align: right;
+  margin-top: 20px;
+}

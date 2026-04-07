@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pay Fine</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body onload="initFinePage()">
+
+<div class="container">
+
+<h2>Transactions <a href="#" onclick="goHome()" style="float:right;">Home</a></h2>
+
+<h3>Pay Fine</h3>
+
+<table>
+
+<tr>
+  <td>Enter Book Name</td>
+  <td><input type="text" id="book" readonly></td>
+</tr>
+
+<tr>
+  <td>Enter Author</td>
+  <td><input type="text" id="author" readonly></td>
+</tr>
+
+<tr>
+  <td>Serial No</td>
+  <td><input type="text" id="serial" readonly></td>
+</tr>
+
+<tr>
+  <td>Issue Date</td>
+  <td><input type="date" id="issueDate" readonly></td>
+</tr>
+
+<tr>
+  <td>Return Date</td>
+  <td><input type="date" id="returnDate" readonly></td>
+</tr>
+
+<tr>
+  <td>Actual Return Date</td>
+  <td><input type="date" id="actualDate"></td>
+</tr>
+
+<tr>
+  <td>Fine Calculated</td>
+  <td><input type="text" id="fine" value="0" readonly></td>
+</tr>
+
+<tr>
+  <td>Fine Paid</td>
+  <td><input type="checkbox" id="paid"></td>
+</tr>
+
+<tr>
+  <td>Remarks</td>
+  <td><textarea id="remarks"></textarea></td>
+</tr>
+
+</table>
+
+<p id="error" class="error"></p>
+
+<button onclick="goBack()">Cancel</button>
+<button onclick="payFine()">Confirm</button>
+
+<div class="logout">
+  <a href="#" onclick="logout()">Log Out</a>
+</div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

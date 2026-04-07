@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Movies Report</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+<h2>Reports <a onclick="goHome()" style="float:right;">Home</a></h2>
+
+<h3>Master List of Movies</h3>
+
+<table border="1">
+<tr>
+<th>Serial No</th>
+<th>Name</th>
+<th>Author</th>
+<th>Category</th>
+<th>Status</th>
+<th>Cost</th>
+<th>Date</th>
+</tr>
+
+<tbody id="moviesTable"></tbody>
+</table>
+
+<button onclick="goBack()">Back</button>
+
+<div class="logout"><a onclick="logout()">Log Out</a></div>
+
+</div>
+
+<script src="script.js"></script>
+<script>loadMoviesReport();</script>
+
+</body>
+</html>

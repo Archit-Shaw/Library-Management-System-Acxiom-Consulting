@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Add Book/Movie</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+<h2>Add Book/Movie <a onclick="goHome()" style="float:right;">Home</a></h2>
+
+<table>
+
+<tr>
+<td>
+<input type="radio" name="type" value="book" checked> Book
+</td>
+<td>
+<input type="radio" name="type" value="movie"> Movie
+</td>
+</tr>
+
+<tr>
+<td>Book/Movie Name</td>
+<td><input type="text" id="bookName"></td>
+</tr>
+
+<tr>
+<td>Author</td>
+<td><input type="text" id="author"></td>
+</tr>
+
+<tr>
+<td>Date of Procurement</td>
+<td><input type="date" id="date"></td>
+</tr>
+
+<tr>
+<td>Quantity/Copies</td>
+<td><input type="number" id="qty" value="1"></td>
+</tr>
+
+</table>
+
+<p id="bookError" class="error"></p>
+
+<button onclick="goBack()">Cancel</button>
+<button onclick="addBook()">Confirm</button>
+
+<div class="logout">
+<a onclick="logout()">Log Out</a>
+</div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

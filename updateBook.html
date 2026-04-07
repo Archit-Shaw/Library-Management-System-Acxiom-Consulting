@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Update Book/Movie</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body onload="initUpdateBook()">
+
+<div class="container">
+
+<h2>Update Book/Movie <a onclick="goHome()" style="float:right;">Home</a></h2>
+
+<table>
+
+<tr>
+<td>
+<input type="radio" name="type" value="book" checked> Book
+</td>
+<td>
+<input type="radio" name="type" value="movie"> Movie
+</td>
+</tr>
+
+<tr>
+<td>Book/Movie Name</td>
+<td>
+<input list="bookList" id="bookName" oninput="loadBookDetails()">
+<datalist id="bookList"></datalist>
+</td>
+</tr>
+
+<tr>
+<td>Serial No</td>
+<td><input type="text" id="serial"></td>
+</tr>
+
+<tr>
+<td>Status</td>
+<td>
+<select id="status">
+<option value="Available">Available</option>
+<option value="Issued">unavailable</option>
+<option value="Issued">removed</option>
+<option value="Issued">to replace</option>
+<option value="Issued">on repair</option>
+
+</select>
+</td>
+</tr>
+
+<tr>
+<td>Date</td>
+<td><input type="date" id="date"></td>
+</tr>
+
+</table>
+
+<p id="error" class="error"></p>
+
+<button onclick="goBack()">Cancel</button>
+<button onclick="updateBook()">Confirm</button>
+
+<div class="logout">
+<a onclick="logout()">Log Out</a>
+</div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

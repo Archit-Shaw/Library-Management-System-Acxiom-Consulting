@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Update Membership</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body onload="initUpdateMembership()">
+
+<div class="container">
+
+<h2>Update Membership <a onclick="goHome()" style="float:right;">Home</a></h2>
+
+<table>
+
+<tr>
+<td>Membership Number</td>
+<td><input type="text" id="memberId"></td>
+</tr>
+
+<tr>
+<td>Start Date</td>
+<td><input type="date" id="startDate" readonly></td>
+</tr>
+
+<tr>
+<td>End Date</td>
+<td><input type="date" id="endDate" readonly></td>
+</tr>
+
+<tr>
+<td>Membership Extension</td>
+<td>
+<input type="radio" name="ext" value="6" checked> 6 Months
+<input type="radio" name="ext" value="12"> 1 Year
+<input type="radio" name="ext" value="24"> 2 Years
+</td>
+</tr>
+
+<tr>
+<td>Remove Membership</td>
+<td>
+<input type="radio" name="action" value="extend" checked> Extend  
+<input type="radio" name="action" value="remove"> Remove
+</td>
+</tr>
+
+</table>
+
+<p id="error" class="error"></p>
+
+<button onclick="goBack()">Cancel</button>
+<button onclick="updateMembership()">Confirm</button>
+
+<div class="logout"><a onclick="logout()">Log Out</a></div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

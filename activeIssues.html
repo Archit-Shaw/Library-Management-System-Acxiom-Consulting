@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Active Issues</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+<h2>Reports <a onclick="goHome()" style="float:right;">Home</a></h2>
+
+<h3>Active Issues</h3>
+
+<table>
+<tr>
+<th>Serial No Book/Movie</th>
+<th>Name of Book/Movie</th>
+<th>Membership Id</th>
+<th>Date of Issue</th>
+<th>Date of Return</th>
+</tr>
+
+<tbody id="issuesTable"></tbody>
+</table>
+
+<button onclick="goBack()">Back</button>
+
+<div class="logout"><a onclick="logout()">Log Out</a></div>
+
+</div>
+
+<script src="script.js"></script>
+<script>
+loadIssues();
+</script>
+
+</body>
+</html>

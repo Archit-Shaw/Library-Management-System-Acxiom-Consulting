@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Add Membership</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body onload="initAddMembership()">
+
+<div class="container">
+
+<h2>Add Membership <a onclick="goHome()" style="float:right;">Home</a></h2>
+
+<table>
+
+<tr>
+<td>Name</td>
+<td><input type="text" id="name"></td>
+</tr>
+
+<tr>
+<td>Contact Number</td>
+<td><input type="text" id="contact"></td>
+</tr>
+
+<tr>
+<td>Address</td>
+<td><input type="text" id="address"></td>
+</tr>
+
+<tr>
+<td>Aadhar Card No</td>
+<td><input type="text" id="aadhar"></td>
+</tr>
+
+<tr>
+<td>Start Date</td>
+<td><input type="date" id="startDate"></td>
+</tr>
+
+<tr>
+<td>Membership Duration</td>
+<td>
+<input type="radio" name="dur" value="6" checked> 6 Months
+<input type="radio" name="dur" value="12"> 1 Year
+<input type="radio" name="dur" value="24"> 2 Years
+</td>
+</tr>
+
+<tr>
+<td>End Date</td>
+<td><input type="date" id="endDate" ></td>
+</tr>
+
+</table>
+
+<p id="error" class="error"></p>
+
+<button onclick="goBack()">Cancel</button>
+<button onclick="addMember()">Confirm</button>
+
+<div class="logout"><a onclick="logout()">Log Out</a></div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Books Report</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+<h2>Reports <a href="#" onclick="goHome()" style="float:right;">Home</a></h2>
+
+<h3>Master List of Books</h3>
+
+<table border="1">
+<tr>
+<th>Serial No</th>
+<th>Name of Book</th>
+<th>Author Name</th>
+<th>Category</th>
+<th>Status</th>
+<th>Cost</th>
+<th>Procurement Date</th>
+</tr>
+
+<tbody id="booksTable"></tbody>
+</table>
+
+<button onclick="goBack()">Back</button>
+
+<div class="logout"><a onclick="logout()">Log Out</a></div>
+
+</div>
+
+<script src="script.js"></script>
+<script>
+loadBooksReport();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Issue Requests</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+<h2>Reports <a onclick="goHome()" style="float:right;">Home</a></h2>
+
+<h3>Issue Requests</h3>
+
+<table>
+<tr>
+<th>Membership Id</th>
+<th>Name of Book/Movie</th>
+<th>Requested Date</th>
+<th>Request Fulfilled Date</th>
+</tr>
+
+<tbody id="requestTable"></tbody>
+</table>
+
+<button onclick="goBack()">Back</button>
+
+<div class="logout"><a onclick="logout()">Log Out</a></div>
+
+</div>
+
+<script src="script.js"></script>
+<script>
+loadRequests();
+</script>
+
+</body>
+</html>

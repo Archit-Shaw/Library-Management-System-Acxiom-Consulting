@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Issue Book</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body onload="initIssuePage()">
+
+<div class="container">
+
+<h2>Transactions <a href="#" onclick="goHome()" style="float:right;">Home</a></h2>
+
+<h3>Book Issue</h3>
+
+<table>
+
+<tr>
+  <td>Book Name</td>
+  <td>
+    <select id="book" onchange="fillAuthor()">
+      <option value="">-- Select Book --</option>
+    </select>
+  </td>
+</tr>
+
+<tr>
+  <td>Author</td>
+  <td><input type="text" id="author"></td>
+</tr>
+
+<tr>
+  <td>Issue Date</td>
+  <td><input type="date" id="issueDate"></td>
+</tr>
+
+<tr>
+  <td>Return Date</td>
+  <td><input type="date" id="returnDate"></td>
+</tr>
+
+<tr>
+  <td>Remarks</td>
+  <td><textarea id="remarks"></textarea></td>
+</tr>
+
+</table>
+
+<p id="error" class="error"></p>
+
+<button onclick="goBack()">Cancel</button>
+<button onclick="issueBook()">Confirm</button>
+
+<div class="logout">
+  <a href="#" onclick="logout()">Log Out</a>
+</div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

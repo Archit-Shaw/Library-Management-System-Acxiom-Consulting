@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Membership Report</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+<h2>Reports <a onclick="goHome()" style="float:right;">Home</a></h2>
+
+<h3>List of Active Memberships</h3>
+
+<table border="1">
+<tr>
+<th>Membership Id</th>
+<th>Name of Member</th>
+<th>Contact Number</th>
+<th>Contact Address</th>
+<th>Aadhar Card No</th>
+<th>Start Date of Membership</th>
+<th>End Date of Membership</th>
+<th>Status (Active/Inactive)</th>
+<th>Amount Pending (Fine)</th>
+</tr>
+
+<tbody id="memberTable"></tbody>
+</table>
+
+<button onclick="goBack()">Back</button>
+
+<div class="logout"><a onclick="logout()">Log Out</a></div>
+
+</div>
+
+<script src="script.js"></script>
+<script>
+loadMembers();
+</script>
+
+</body>
+</html>

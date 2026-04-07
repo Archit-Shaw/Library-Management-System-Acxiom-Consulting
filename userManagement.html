@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User Management</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body onload="initUserManagement()">
+
+<div class="container">
+
+<h2>User Management <a onclick="goHome()" style="float:right;">Home</a></h2>
+
+<table>
+
+<tr>
+<td>
+<input type="radio" name="mode" value="new" checked> New User
+</td>
+<td>
+<input type="radio" name="mode" value="existing"> Existing User
+</td>
+</tr>
+
+<tr>
+<td>Name</td>
+<td><input type="text" id="username"></td>
+</tr>
+
+<tr>
+<td>Status</td>
+<td><input type="checkbox" id="active"> Active</td>
+</tr>
+
+<tr>
+<td>Admin</td>
+<td><input type="checkbox" id="admin"> Admin</td>
+</tr>
+
+</table>
+
+<p id="error" class="error"></p>
+
+<button onclick="goBack()">Cancel</button>
+<button onclick="handleUser()">Confirm</button>
+
+<div class="logout">
+<a onclick="logout()">Log Out</a>
+</div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

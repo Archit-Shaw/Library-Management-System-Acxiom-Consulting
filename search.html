@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Book Availability</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+<h2>Transactions <a href="#" onclick="goHome()" style="float:right;">Home</a></h2>
+
+<h3>Book Availability</h3>
+
+<table>
+<tr>
+  <td>Enter Book Name</td>
+  <td>
+    <select id="bookName">
+      <option value="">-- Select Book --</option>
+    </select>
+  </td>
+</tr>
+
+<tr>
+  <td>Enter Author</td>
+  <td>
+    <select id="author">
+      <option value="">-- Select Author --</option>
+    </select>
+  </td>
+</tr>
+</table>
+
+<p id="error" class="error"></p>
+
+<button onclick="goBack()">Back</button>
+<button onclick="searchBook()">Search</button>
+
+<div id="result"></div>
+
+<div class="logout">
+  <a href="#" onclick="logout()">Log Out</a>
+</div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User Home Page</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body onload="loadProducts()">
+
+<div class="container">
+
+  <h2>User Home Page</h2>
+
+  <!-- Navigation -->
+  <div class="nav-links">
+    <a href="reports.html">Reports</a>
+    <a href="transactions.html">Transactions</a>
+  </div>
+
+  <h3>Product Details</h3>
+
+<table border="1">
+  <tr>
+    <th>Code No From</th>
+    <th>Code No To</th>
+    <th>Category</th>
+  </tr>
+
+  <tbody id="productTable"></tbody>
+</table>
+
+  <div class="logout">
+    <a href="#" onclick="logout()">Log Out</a>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

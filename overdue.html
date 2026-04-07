@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Overdue Returns</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+<h2>Reports <a onclick="goHome()" style="float:right;">Home</a></h2>
+
+<h3>Overdue Returns</h3>
+
+<table>
+<tr>
+<th>Serial No Book</th>
+<th>Name of Book</th>
+<th>Membership Id</th>
+<th>Date of Issue</th>
+<th>Date of Return</th>
+<th>Fine Calculations</th>
+</tr>
+
+<tbody id="overdueTable"></tbody>
+</table>
+
+<button onclick="goBack()">Back</button>
+
+<div class="logout"><a onclick="logout()">Log Out</a></div>
+
+</div>
+
+<script src="script.js"></script>
+<script>
+loadOverdue();
+</script>
+
+</body>
+</html>

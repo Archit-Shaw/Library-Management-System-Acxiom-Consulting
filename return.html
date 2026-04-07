@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Return Book</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body onload="initReturnPage()">
+
+<div class="container">
+
+<h2>Transactions <a href="#" onclick="goHome()" style="float:right;">Home</a></h2>
+
+<h3>Return Book</h3>
+
+<table>
+
+<tr>
+  <td>Enter Book Name</td>
+  <td>
+    <select id="book" onchange="fillReturnDetails()">
+      <option value="">-- Select Book --</option>
+    </select>
+  </td>
+</tr>
+
+<tr>
+  <td>Enter Author</td>
+  <td><input type="text" id="author" readonly></td>
+</tr>
+
+<tr>
+  <td>Serial No</td>
+  <td>
+    <select id="serial" onchange="fillDates()">
+      <option value="">-- Select Serial --</option>
+    </select>
+  </td>
+</tr>
+
+<tr>
+  <td>Issue Date</td>
+  <td><input type="date" id="issueDate" readonly></td>
+</tr>
+
+<tr>
+  <td>Return Date</td>
+  <td><input type="date" id="returnDate"></td>
+</tr>
+
+<tr>
+  <td>Remarks</td>
+  <td><textarea id="remarks"></textarea></td>
+</tr>
+
+</table>
+
+<p id="error" class="error"></p>
+
+<button onclick="goBack()">Cancel</button>
+<button onclick="returnBook()">Confirm</button>
+
+<div class="logout">
+  <a href="#" onclick="logout()">Log Out</a>
+</div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
