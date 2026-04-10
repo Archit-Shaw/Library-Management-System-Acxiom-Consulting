@@ -1,12 +1,11 @@
+// const products = [
+//   { from: "SC(B/M)000001", to: "SC(B/M)999999", category: "Science" },
+//   { from: "EC(B/M)000001", to: "EC(B/M)999999", category: "Economics" },
+//   { from: "FC(B/M)000001", to: "FC(B/M)999999", category: "Fiction" },
+//   { from: "CH(B/M)000001", to: "CH(B/M)999999", category: "Children" },
+//   { from: "PD(B/M)000001", to: "PD(B/M)999999", category: "Personal Development" }
+// ];
 // login function
-const products = [
-  { from: "SC(B/M)000001", to: "SC(B/M)999999", category: "Science" },
-  { from: "EC(B/M)000001", to: "EC(B/M)999999", category: "Economics" },
-  { from: "FC(B/M)000001", to: "FC(B/M)999999", category: "Fiction" },
-  { from: "CH(B/M)000001", to: "CH(B/M)999999", category: "Children" },
-  { from: "PD(B/M)000001", to: "PD(B/M)999999", category: "Personal Development" }
-];
-
 function login() {
   const user = document.getElementById("username").value;
   const pass = document.getElementById("password").value;
@@ -86,32 +85,40 @@ function getBooks() {
 }
 
 // INIT RETURN PAGE
-function initReturnPage() {
-  let issued = JSON.parse(localStorage.getItem("issuedBook"));
+// function initReturnPage() {
+//   let issued = JSON.parse(localStorage.getItem("issuedBook"));
 
-  if (issued) {
-    document.getElementById("book").value = issued.book || "";
-    document.getElementById("author").value = issued.author || "";
-    document.getElementById("issueDate").value = issued.issueDate || "";
-    document.getElementById("returnDate").value = issued.returnDate || "";
-  }
-}
+//   if (issued) {
+//     document.getElementById("book").value = issued.book || "";
+//     document.getElementById("author").value = issued.author || "";
+//     document.getElementById("issueDate").value = issued.issueDate || "";
+//     document.getElementById("returnDate").value = issued.returnDate || "";
+//   }
+// }
 
 // RETURN BOOK FUNCTION
 function returnBook() {
-  let serial = document.getElementById("serial").value;
+  let book = document.getElementById("book").value;
+  let author = document.getElementById("author").value;
   let issueDate = document.getElementById("issueDate").value;
   let returnDate = document.getElementById("returnDate").value;
+  let serial = document.getElementById("serial").value;
 
-  let returns = JSON.parse(localStorage.getItem("returns")) || [];
+  if (!book || !serial) {
+    document.getElementById("error").innerText = "Please fill all required fields";
+    return;
+  }
 
-  returns.push({
-    serial,
-    issueDate,
-    returnDate,
-  });
+  // SAVE DATA FOR FINE PAGE
+  localStorage.setItem("issuedBook", JSON.stringify({
+    book: book,
+    author: author,
+    issueDate: issueDate,
+    returnDate: returnDate,
+    serial: serial
+  }));
 
-  localStorage.setItem("returns", JSON.stringify(returns));
+  console.log("Saved for fine page");
 
   window.location.href = "fine.html";
 }
@@ -120,18 +127,27 @@ function initFinePage() {
   let issued = JSON.parse(localStorage.getItem("issuedBook"));
   let returned = JSON.parse(localStorage.getItem("returnData"));
 
-  if (!issued || !returned) return;
+  console.log("Issued:", issued);
+  console.log("Returned:", returned);
+
+  if (!issued) return;
 
   document.getElementById("book").value = issued.book || "";
   document.getElementById("author").value = issued.author || "";
-  document.getElementById("serial").value = returned.serial || "";
   document.getElementById("issueDate").value = issued.issueDate || "";
   document.getElementById("returnDate").value = issued.returnDate || "";
 
-  // Default actual return date = today
-  let today = new Date().toISOString().split("T")[0];
-  document.getElementById("actualDate").value = today;
+  // Serial optional
+  if (returned) {
+    document.getElementById("serial").value = issued.serial || "";
+  }
 
+  let date = new Date().toISOString().split("T")[0];
+  document.getElementById("actualDate").value = date;
+
+  document
+    .getElementById("actualDate")
+    .addEventListener("input", calculateFine);
   calculateFine();
 }
 
@@ -143,6 +159,7 @@ function calculateFine() {
   let diff = Math.ceil((actualDate - returnDate) / (1000 * 60 * 60 * 24));
 
   let fine = diff > 0 ? diff * 10 : 0;
+  console.log("Diff:", diff, "Fine:", fine);
 
   document.getElementById("fine").value = fine;
 }
@@ -173,6 +190,12 @@ function payFine() {
 
   goHome();
 }
+document.addEventListener("DOMContentLoaded", function () {
+  if (document.getElementById("actualDate")) {
+    console.log("Fine Page Loaded");
+    initFinePage();
+  }
+});
 //report data
 function loadBooksReport() {
   let books = JSON.parse(localStorage.getItem("books")) || [];
@@ -336,10 +359,8 @@ function calculateEndDate() {
 
   let date = new Date(start);
   date.setMonth(date.getMonth() + parseInt(duration));
-
   document.getElementById("endDate").value = date.toISOString().split("T")[0];
 }
-
 // ADD MEMBER
 
 // INIT FUNCTION (runs on page load)
@@ -415,7 +436,7 @@ function goHome() {
 }
 
 function logout() {
-  localStorage.clear();
+  localStorage.removeItem("role");
   window.location.href = "login.html";
 }
 
@@ -721,31 +742,31 @@ function fillDates() {
   document.getElementById("issueDate").value = data.issueDate || "";
   document.getElementById("returnDate").value = data.returnDate || "";
 }
-function returnBook() {
-  let serial = document.getElementById("serial").value;
-  let issueDate = document.getElementById("issueDate").value;
-  let returnDate = document.getElementById("returnDate").value;
+// function returnBook() {
+//   let serial = document.getElementById("serial").value;
+//   let issueDate = document.getElementById("issueDate").value;
+//   let returnDate = document.getElementById("returnDate").value;
 
-  let error = document.getElementById("error");
+//   let error = document.getElementById("error");
 
-  if (!serial || !issueDate || !returnDate) {
-    error.innerText = "Please fill all required fields";
-    return;
-  }
+//   if (!serial || !issueDate || !returnDate) {
+//     error.innerText = "Please fill all required fields";
+//     return;
+//   }
 
-  // Save return info
-  localStorage.setItem(
-    "returnData",
-    JSON.stringify({
-      serial,
-      issueDate,
-      returnDate,
-    }),
-  );
+//   // Save return info
+//   localStorage.setItem(
+//     "returnData",
+//     JSON.stringify({
+//       serial,
+//       issueDate,
+//       returnDate,
+//     }),
+//   );
 
-  // Redirect to fine page
-  window.location.href = "fine.html";
-}
+//   // Redirect to fine page
+//   window.location.href = "fine.html";
+// }
 
 // RESET FORM
 function resetUserForm() {
@@ -846,7 +867,7 @@ function issueBook() {
 
   localStorage.setItem("issuedBooks", JSON.stringify(issuedBooks));
 
-  console.log("✅ Saved:", issuedBooks);
+  console.log("Saved:", issuedBooks);
 
   alert("Book Issued Successfully");
 }
@@ -858,18 +879,18 @@ window.onload = function () {
   }
 };
 
-function payFine() {
-  const paid = document.getElementById("finePaid").checked;
-  const fine = 100;
+// function payFine() {
+//   const paid = document.getElementById("finePaid").checked;
+//   const fine = 100;
 
-  if (fine > 0 && !paid) {
-    document.getElementById("fineError").innerText = "Please pay fine";
-    return;
-  }
+//   if (fine > 0 && !paid) {
+//     document.getElementById("fineError").innerText = "Please pay fine";
+//     return;
+//   }
 
-  alert("Transaction Complete");
-  window.location.href = "dashboard.html";
-}
+//   alert("Transaction Complete");
+//   window.location.href = "dashboard.html";
+// }
 document.addEventListener("DOMContentLoaded", function () {
 
   // Search Page
