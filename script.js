@@ -1,12 +1,4 @@
 // login function
-const products = [
-  { from: "SC(B/M)000001", to: "SC(B/M)999999", category: "Science" },
-  { from: "EC(B/M)000001", to: "EC(B/M)999999", category: "Economics" },
-  { from: "FC(B/M)000001", to: "FC(B/M)999999", category: "Fiction" },
-  { from: "CH(B/M)000001", to: "CH(B/M)999999", category: "Children" },
-  { from: "PD(B/M)000001", to: "PD(B/M)999999", category: "Personal Development" }
-];
-
 function login() {
   const user = document.getElementById("username").value;
   const pass = document.getElementById("password").value;
@@ -415,7 +407,7 @@ function goHome() {
 }
 
 function logout() {
-  localStorage.clear();
+  localStorage.removeItem("role");
   window.location.href = "login.html";
 }
 
